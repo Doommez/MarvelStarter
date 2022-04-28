@@ -42,13 +42,15 @@ class CharInfo extends Component {
 
     updateChar=()=>{
         const {charId}=this.props
-        if (!charId&&charId==0){
+        if (!charId&&charId===0){
             return
         }
         this.onCharLoad();
         this.marvelService.getCharacter(charId)
                         .then(this.onCharLoad)
                         .catch(this.error)
+
+        
     }
     render(){
         const {char,loading, error}=this.state;
@@ -93,7 +95,7 @@ const View=(char)=>{
                 </div>
                 <div className="char__comics">Comics:</div>
                 <ul className="char__comics-list">
-                    {comics.lenght>0?null:"Sorry, There isn't information"}
+                {comics.length > 0 ? null : 'There is no comics with this character'}
                    { comics.map((item,i) =>{
                        if(i>9)return
                        return (
