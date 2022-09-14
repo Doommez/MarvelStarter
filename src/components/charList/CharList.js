@@ -18,17 +18,10 @@ const CharList =(props)=> {
 
     useEffect(()=>{
           onRequest(offset,true) 
-       /*  marvelService.getAllCharacters()
-            .then(onCharListLoaded)
-            .catch(onError) */
+      
     },[])
 
-   /*  componentDidMount() {
-        this.marvelService.getAllCharacters()
-            .then(this.onCharListLoaded)
-            .catch(this.onError)
-           
-    } */
+  
 
     const onRequest=(offset,initial)=>{
         if(initial){
