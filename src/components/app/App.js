@@ -16,8 +16,8 @@ const App =()=>{
                 <main>
                     <Routes>
 
-                        <Route  path="/" element={<MainPage/>}/>
-                        <Route  path="/comics" element={<ComicsPage/>}/>
+                        <Route  path="/MarvelStarter/" element={<MainPage/>}/>
+                        <Route  path="/MarvelStarter/comics" element={<ComicsPage/>}/>
   
                     </Routes>
                 </main>
