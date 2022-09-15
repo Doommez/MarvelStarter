@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import useMarvelService from '../../servesers/MarvelService';
 import ErrorBoundary from '../errorBoundary/ErrorBoundary';
 import Spinner from '../spinner/Spinner';
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -42,13 +42,13 @@ const ComicsList = () => {
         const items=arr.map((item,i)=>{
             return(
                 <li className="comics__item" key={i}>
-                <a href="#">
+                <Link to={`/MarvelStarter/comics/${item.id}`}>
                     <img src={item.thumbnail} alt={item.title} className="comics__item-img"/>
                     <div className="comics__item-name">{item.title}</div>
                     <div className="comics__item-price">{item.pageCount}</div>
                     <div className="comics__item-price">{item.language}</div>
                     <div className="comics__item-price">{item.price}</div>
-                </a>
+                </Link>
             </li>
             )
         })
