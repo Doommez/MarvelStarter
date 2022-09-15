@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/MarvelStarter/static/css/main.f713b9c0.chunk.css",
-    "main.js": "/MarvelStarter/static/js/main.7e5ed404.chunk.js",
-    "main.js.map": "/MarvelStarter/static/js/main.7e5ed404.chunk.js.map",
+    "main.css": "/MarvelStarter/static/css/main.bee051a0.chunk.css",
+    "main.js": "/MarvelStarter/static/js/main.73f4b1cd.chunk.js",
+    "main.js.map": "/MarvelStarter/static/js/main.73f4b1cd.chunk.js.map",
     "runtime-main.js": "/MarvelStarter/static/js/runtime-main.56b518bf.js",
     "runtime-main.js.map": "/MarvelStarter/static/js/runtime-main.56b518bf.js.map",
-    "static/js/2.6aa39aa6.chunk.js": "/MarvelStarter/static/js/2.6aa39aa6.chunk.js",
-    "static/js/2.6aa39aa6.chunk.js.map": "/MarvelStarter/static/js/2.6aa39aa6.chunk.js.map",
+    "static/js/2.4408d656.chunk.js": "/MarvelStarter/static/js/2.4408d656.chunk.js",
+    "static/js/2.4408d656.chunk.js.map": "/MarvelStarter/static/js/2.4408d656.chunk.js.map",
     "index.html": "/MarvelStarter/index.html",
-    "static/css/main.f713b9c0.chunk.css.map": "/MarvelStarter/static/css/main.f713b9c0.chunk.css.map",
-    "static/js/2.6aa39aa6.chunk.js.LICENSE.txt": "/MarvelStarter/static/js/2.6aa39aa6.chunk.js.LICENSE.txt",
+    "static/css/main.bee051a0.chunk.css.map": "/MarvelStarter/static/css/main.bee051a0.chunk.css.map",
+    "static/js/2.4408d656.chunk.js.LICENSE.txt": "/MarvelStarter/static/js/2.4408d656.chunk.js.LICENSE.txt",
     "static/media/Avengers.4065c8f9.png": "/MarvelStarter/static/media/Avengers.4065c8f9.png",
     "static/media/Avengers_logo.9eaf2193.png": "/MarvelStarter/static/media/Avengers_logo.9eaf2193.png",
     "static/media/error.42292aa1.gif": "/MarvelStarter/static/media/error.42292aa1.gif",
@@ -18,8 +18,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.56b518bf.js",
-    "static/js/2.6aa39aa6.chunk.js",
-    "static/css/main.f713b9c0.chunk.css",
-    "static/js/main.7e5ed404.chunk.js"
+    "static/js/2.4408d656.chunk.js",
+    "static/css/main.bee051a0.chunk.css",
+    "static/js/main.73f4b1cd.chunk.js"
   ]
 }
