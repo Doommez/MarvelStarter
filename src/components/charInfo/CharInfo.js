@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
+import { Link } from 'react-router-dom';
 import useMarvelService from '../../servesers/MarvelService';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
@@ -55,7 +55,7 @@ const CharInfo = (props) => {
 
 const View = ({char}) => {
     const {name, description, thumbnail, homepage, wiki, comics} = char;
-
+   console.log(comics);
     let imgStyle = {'objectFit' : 'cover'};
     if (thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
         imgStyle = {'objectFit' : 'contain'};
@@ -85,12 +85,13 @@ const View = ({char}) => {
                 {comics.length > 0 ? null : 'There is no comics with this character'}
                 {
                     comics.map((item, i) => {
+                        /* console.log(item.resourceURI.slice(item.resourceURI.length-5)); */
                         // eslint-disable-next-line
                         if (i > 9) return;
                         return (
-                            <li key={i} className="char__comics-item">
+                            <Link to={`/MarvelStarter/comics/${item.resourceURI.slice(item.resourceURI.lastIndexOf("/")+1)}`} key={i} className="char__comics-item">
                                 {item.name}
-                            </li>
+                            </Link>
                         )
                     })
                 }                

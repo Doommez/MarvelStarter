@@ -40,6 +40,7 @@ const ComicsList = () => {
     }
     function renderItems(arr){
         const items=arr.map((item,i)=>{
+          
             return(
                 <li className="comics__item" key={i}>
                 <Link to={`/MarvelStarter/comics/${item.id}`}>
