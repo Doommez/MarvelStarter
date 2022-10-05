@@ -114,7 +114,13 @@ const CharList =(props)=> {
 
         const errorMessage = error ? <ErrorMessage/> : null;
         const spinner = loading && !newItemLoading ? <Spinner/> : null;
-       
+
+
+        if(loading){
+            import('./someFunc')
+                    .then(obj=>obj.logger())
+                    .catch(()=>console.log('err'))
+        }
 
         return (
             <div className="char__list">
