@@ -4,6 +4,7 @@ import ErrorMessage from '../errorMessage/ErrorMessage';
 import useMarvelService from '../../servesers/MarvelService';
 import './charList.scss';
 import propTypes  from 'prop-types';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 
 const CharList =(props)=> {
@@ -12,7 +13,7 @@ const CharList =(props)=> {
     const [newItemLoading,setNewItemLoading] = useState(false)
     const [offset,setOffset] = useState(210)
     const [charEnded,setCharEnded] = useState(false)
-   
+
     
     const {loading, error, getAllCharacters} =  useMarvelService();
 
@@ -63,14 +64,20 @@ const CharList =(props)=> {
         // и не факт, что мы выиграем по оптимизации за счет бОльшего кол-ва элементов
 
         // По возможности, не злоупотребляйте рефами, только в крайних случаях
-        itemRefs.current.forEach(item => item.classList.remove('char__item_selected'));
+        itemRefs.current.forEach(item => {
+            if(item){
+                item.classList.remove('char__item_selected')
+            }
+            });
         itemRefs.current[id].classList.add('char__item_selected');
         itemRefs.current[id].focus();
     }
 
     // Этот метод создан для оптимизации, 
     // чтобы не помещать такую конструкцию в метод render
+  
     function renderItems(arr) {
+       
         const items =  arr.map((item, i) => {
             let imgStyle = {'objectFit' : 'cover'};
             if (item.thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
@@ -78,6 +85,15 @@ const CharList =(props)=> {
             }
             
             return (
+                <CSSTransition 
+                nodeRef={itemRefs.current[i]}
+                timeout={500}
+                classNames="char__item"
+                key={item.id}
+                >
+               
+
+               
                 <li 
                     className="char__item"
                     tabIndex={0}
@@ -96,12 +112,21 @@ const CharList =(props)=> {
                         <img src={item.thumbnail} alt={item.name} style={imgStyle}/>
                         <div className="char__name">{item.name}</div>
                 </li>
+                </CSSTransition>
+                
             )
         });
         // А эта конструкция вынесена для центровки спиннера/ошибки
         return (
             <ul className="char__grid">
-                {items}
+                <TransitionGroup 
+                    component={null}
+                    > 
+                    {items}
+                </TransitionGroup>
+        
+
+               
             </ul>
         )
     }
@@ -126,7 +151,8 @@ const CharList =(props)=> {
             <div className="char__list">
                 {errorMessage}
                 {spinner}
-              {items}
+                {items}
+ 
                 <button 
                     className="button button__main button__long"
                     disabled={newItemLoading}

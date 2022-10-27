@@ -3,21 +3,21 @@ import {useState, useEffect} from 'react';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import useMarvelService from '../../servesers/MarvelService';
-
+import { CSSTransition } from 'react-transition-group';
 import './randomChar.scss';
 import mjolnir from '../../resources/img/mjolnir.png';
 
 const RandomChar = () => {
 
     const [char, setChar] = useState({});
-   
+    const [load,setLoad]=useState(false)
 
     const {loading,error,getCharacter,clearError} =  useMarvelService();
 
     useEffect(() => {
         updateChar();
         const timerId = setInterval(updateChar, 60000);
-
+        setLoad(true)
         return () => {
             clearInterval(timerId)
         }
@@ -43,7 +43,14 @@ const RandomChar = () => {
     const content = !(loading || error || !char) ? <View char={char} /> : null;
 
     return (
-        <div className="randomchar">
+        <CSSTransition 
+        classNames={"randomchar"}
+        in={load}
+        timeout={500}
+        mountOnEnter
+        unmountOnExit
+        >
+             <div className="randomchar">
             {errorMessage}
             {spinner}
             {content}
@@ -61,6 +68,8 @@ const RandomChar = () => {
                 <img src={mjolnir} alt="mjolnir" className="randomchar__decoration"/>
             </div>
         </div>
+        </CSSTransition>
+       
     )
 }
 
