@@ -1,2 +1,0 @@
-(this.webpackJsonpmarvel=this.webpackJsonpmarvel||[]).push([[8],{43:function(o,n,e){"use strict";function l(){console.log("hello world")}e.r(n),e.d(n,"logger",(function(){return l}))}}]);
-//# sourceMappingURL=8.1c103cb6.chunk.js.map

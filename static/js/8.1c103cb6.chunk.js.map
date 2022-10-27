@@ -1,1 +1,0 @@
-{"version":3,"sources":["components/charList/someFunc.js"],"names":["logger","console","log"],"mappings":"iGAAO,SAASA,IACdC,QAAQC,IAAI,eADd","file":"static/js/8.1c103cb6.chunk.js","sourcesContent":["export function logger(){\n  console.log('hello world');\n}"],"sourceRoot":""}
